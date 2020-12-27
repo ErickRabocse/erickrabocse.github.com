@@ -1,3 +1,23 @@
+
+.container{
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.british_flag{
+  display: inline-block;
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+}
+
+h1 {
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+}
+
 td{
   border: solid 1px;
 }
