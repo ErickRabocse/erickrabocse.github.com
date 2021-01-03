@@ -73,7 +73,7 @@ h2.title {
   color: white;
   border-radius: 50%;
   background-color: #1d3557ff;
-  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.26), 0 3px 20px rgba(0, 0, 0, 0.33);
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.16), 0 3px 20px rgba(0, 0, 0, 0.23);
   font-weight: 400;
   cursor: pointer;
   display: flex;
@@ -109,6 +109,10 @@ p{
 
 a{
   color: #e63946ff;
+}
+
+a.close{
+    text-decoration: none;
 }
 
 .description{
