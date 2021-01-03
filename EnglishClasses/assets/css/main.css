@@ -51,13 +51,34 @@ h2.title {
 
 .content{
   max-width: 960px;
-  max-height: 400px;
+  max-height: 600px;
   height: 100%;
   width: 100%;
   padding: 0 10px;
   background-color: white;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.26), 0 3px 20px rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  position: relative;
+}
+
+.actions{
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.close{
+  height: 40px;
+  width: 40px;
+  color: white;
+  border-radius: 50%;
+  background-color: #1d3557ff;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.26), 0 3px 20px rgba(0, 0, 0, 0.33);
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .table{
