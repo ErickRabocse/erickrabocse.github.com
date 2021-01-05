@@ -17,23 +17,33 @@ body{
   margin-right: 5px;
 }
 
+.boy_listening{
+  float: left;
+  margin: 0 2em;
+  height: 250px;
+}
+
 h1 {
   display: inline-block;
-  width: 600px;
+  width: 890px;
   vertical-align: top;
   text-transform: uppercase;
+  border-bottom: solid 2px #e63946ff;
+
 }
 
 h2.title {
   text-transform: uppercase;
   border-bottom: solid 2px #e63946ff;
   padding-bottom: 1em;
+  font-size: 2em;
 }
 
 .sound{
   background-color: #a8dadcff;
   padding: 10px;
   border-radius: 1em 0 1em 1em;
+  margin-right: 0.5em;
 }
 
 .container{
@@ -51,14 +61,19 @@ h2.title {
 
 .content{
   max-width: 960px;
-  max-height: 400px;
+  max-height: 500px;
   height: 100%;
   width: 100%;
-  padding: 0 10px;
+  padding: 1.5em;
   background-color: white;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.26), 0 3px 20px rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   position: relative;
+}
+
+.content.animate__animated{
+  animation: fadeInDown;
+  animation-duration: 1.5s;
 }
 
 .actions{
@@ -84,8 +99,7 @@ h2.title {
 .table{
   color: #1d3557ff;
   width: 100%;
-  border-top: solid 2px #e63946ff;
-  padding-top: 1em;
+  margin-top: 3em;
 }
 
 .table th, .table td{
@@ -109,6 +123,21 @@ p{
   color: #1d3557ff;
   font-weight: 400;
   line-height: 1.8em;
+  text-align: justify;
+}
+
+ul{
+  list-style-position: inside;
+}
+
+li{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #1d3557ff;
+  font-weight: 400;
+  line-height: 1.8em;
+  text-align: justify;
+  left: 2em;
 }
 
 a{
@@ -118,6 +147,15 @@ a{
 a.close{
     text-decoration: none;
 }
+
+a:hover{
+  opacity: 0.7;
+}
+
+a:focus{
+  background-color: #1d3557ff;
+}
+
 
 /*
 For the listening-link to obtain the display properties, the text has to be wrapped in a <span>
@@ -150,9 +188,29 @@ a.listening_link{
   font-weight: 400;
 }
 
-footer{
+.instructions{
+  color: #1d3557ff;
+}
+
+.beginner{
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #e63946ff;
+  border-top: 2px solid #a8dadc;
+  border-bottom: 2px solid #a8dadc;
+  width: 400px;
+}
+
+.footer_index{
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
   font-style: italic;
-  margin-top: 3em;
+  margin-top: 8.5em;
+}
+
+.footer_listening{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  margin-top: 8em;
 }
