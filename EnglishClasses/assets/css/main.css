@@ -11,25 +11,24 @@ body{
   font-size: 16px;
 }
 .british_flag{
-  display: inline-block;
   width: 60px;
-  margin-top: 10px;
-  margin-right: 5px;
+  position: absolute;
+  top: 0;
+  right: 0.2em;
 }
 
 .boy_listening{
   float: left;
-  margin: 0 2em;
+  margin-top: -1.5em;
   height: 250px;
 }
 
 h1 {
   display: inline-block;
-  width: 890px;
+  width: auto;
   vertical-align: top;
   text-transform: uppercase;
   border-bottom: solid 2px #e63946ff;
-
 }
 
 h2.title {
@@ -41,7 +40,7 @@ h2.title {
 
 .sound{
   background-color: #a8dadcff;
-  padding: 10px;
+  padding: 0.5em;
   border-radius: 1em 0 1em 1em;
   margin-right: 0.5em;
 }
@@ -49,7 +48,6 @@ h2.title {
 .container{
   width: 100vw;
   height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,15 +58,14 @@ h2.title {
 }
 
 .content{
-  max-width: 960px;
-  max-height: 500px;
-  height: 100%;
-  width: 100%;
-  padding: 1.5em;
+  height: 80vh;
+  width: 100vh;
+  padding: 1em;
   background-color: white;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.26), 0 3px 20px rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   position: relative;
+  overflow: scroll;
 }
 
 .content.animate__animated{
@@ -98,10 +95,17 @@ h2.title {
 
 .table{
   color: #1d3557ff;
-  width: 100%;
-  margin-top: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 220px;
 }
 
+th{
+  display: none;
+}
+td{
+  display: block;
+}
 .table th, .table td{
   padding: 1em;
   text-align: left;
@@ -140,6 +144,10 @@ li{
   left: 2em;
 }
 
+img{
+  max-width: 100%;
+}
+
 a{
   color: #e63946ff;
 }
@@ -152,16 +160,12 @@ a:hover{
   opacity: 0.7;
 }
 
-a:focus{
-  background-color: #1d3557ff;
-}
-
-
 /*
-For the listening-link to obtain the display properties, the text has to be wrapped in a <span>
+For the listening-link to obtain the button properties, the text has to be wrapped in a <span>
 To turn text into a button, you must convert it to display:block;
 Its container (.address-btn) may be positioned on screen thanks to position:relative & display;flex.
 */
+
 a.listening_link{
   display: block;
   width: 220px;
@@ -175,6 +179,10 @@ a.listening_link{
   color: #457b9dff;
   font-weight: 700;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23);
+}
+
+.text{
+  margin-top: -2em;
 }
 
 .address-btn{
@@ -198,19 +206,60 @@ a.listening_link{
   color: #e63946ff;
   border-top: 2px solid #a8dadc;
   border-bottom: 2px solid #a8dadc;
-  width: 400px;
+  width: 220px;
 }
 
 .footer_index{
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
   font-style: italic;
-  margin-top: 8.5em;
+  font-size: 0.5em;
+  margin-bottom: -1em;
 }
 
 .footer_listening{
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
   font-style: italic;
-  margin-top: 8em;
+  font-size: 0.5em;
+  margin-bottom: -1em;
+}
+
+@media (min-width:800px) {
+  h1{
+    width: 330px;
+  }
+  .british_flag{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+  .content{
+    width: 120vw;
+    padding-top: 1.5em;
+  }
+  .beginner{
+    width: 400px;
+  }
+  th{
+    display: table-cell;
+  }
+  td{
+    display: table-cell;
+  }
+  .table{
+    width: 600px;
+  }
+  .beginner{
+    width: 200px;
+  }
+}
+
+@media (min-height:700px) {
+
+  .boy_listening{
+    margin: 0 2em;
+  }
 }
