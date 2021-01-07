@@ -58,7 +58,7 @@ h2.title {
 
 .content{
   height: 80vh;
-  width: 100vh;
+  width: 85%;
   padding: 1em;
   background-color: white;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.26), 0 3px 20px rgba(0, 0, 0, 0.33);
@@ -67,8 +67,9 @@ h2.title {
   overflow: scroll;
 }
 
-.content.animate__animated{
+.content.animated{
   animation-duration: 1.5s;
+  animation: fadeInDown;
 }
 
 .actions{
@@ -235,7 +236,7 @@ a.listening_link{
     margin-right: 5px;
   }
   .content{
-    width: 120vw;
+    width: 80vw;
     padding-top: 1.5em;
   }
   .beginner{
