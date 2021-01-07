@@ -18,9 +18,8 @@ body{
 }
 
 .boy_listening{
-  float: left;
-  margin-top: -1.5em;
-  height: 250px;
+  height: 350px;
+  margin-top: 0;
 }
 
 h1 {
@@ -69,7 +68,6 @@ h2.title {
 }
 
 .content.animate__animated{
-  animation: fadeInDown;
   animation-duration: 1.5s;
 }
 
@@ -258,8 +256,9 @@ a.listening_link{
 }
 
 @media (min-height:700px) {
-
   .boy_listening{
     margin: 0 2em;
+    float: left;
+    height: 250px;
   }
 }
