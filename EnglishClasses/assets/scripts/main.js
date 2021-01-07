@@ -50,7 +50,7 @@ links.forEach(function(btn){
     content.classList.add("animate__fadeOutUp");
 
     setTimeout(function(){
-      window.history.go(-1);
+      location.href = "../index.html";
     },800);
   });
 });
