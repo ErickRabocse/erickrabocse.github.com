@@ -8,6 +8,14 @@
 
 
 /*GLOABAL STYLES, FOR ALL ELEMENTS ALIKE: IMAGES, LINKS, FONTS ETC*/
+*{
+  box-sizing: border-box;
+}
+
+img{
+  max-width: 100%;
+}
+
 body{
   font-family: 'Montserrat', sans-serif;
   color: #2f3e46ff;
@@ -16,7 +24,7 @@ body{
 header h1{
   font-size: 1.5rem;
   margin-top: 0.5em;
-  line-height: 1.2em;
+  line-height: 1.5em;
 }
 
 .target{
@@ -25,6 +33,16 @@ header h1{
   margin: 0 0.5em;
 }
 
+  /*
+  TO MAKE CIRCLES out of rectangular images:
+  .image_name{
+  border-radius: 50%;
+    /IN THE FUTURE: aspect-ratio: 1/1;/
+  width: 300px;
+  height: 300px;
+  object-fit: fill;
+}
+  */
 .plan{
   width: 200px;
   border-radius: 50%;
@@ -32,10 +50,34 @@ header h1{
 
 .online_lesson{
   width: 400px;
-  max-width: 100%;
   border-radius: 1em;
 }
 
+.article_img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.13);
+}
+
+.images{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: space-between;
+  width: 100%;
+  max-width: 70em;
+}
+
+.subtitle{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+li{
+  line-height: 1.5em;
+}
 
 /*UTILITY STYLES: SPACES(MARGIN/PADDING), SHADOWS, COLORS ETC. */
 /*WIDTH EXPLANATION: https://www.youtube.com/watch?v=YjtunZW7jxw*/
@@ -47,8 +89,8 @@ header h1{
 }
 
 .container{
-  width: 80rem;
-  max-width: 90%;
+  width: 60rem;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -57,7 +99,6 @@ header h1{
   justify-content: center;
   align-items: center;
   flex-direction: row-reverse;
-  padding-bottom: 1em;
 }
 
 .bg_green{
@@ -66,8 +107,13 @@ header h1{
 }
 
 .section_padding{
-  padding: 4.25em 2em;
+  padding: 3em 2em;
 }
+
+.line_height{
+  line-height: 1.5em;
+}
+
 
 /*COMPONENT STYLES: COVERS, ETC.*/
 
@@ -78,11 +124,11 @@ header h1{
 */
 
 /*THIS MAKES AN OVERLAY WHICH CAN BE TURNED INTO A LINE OR A FRONT/BACK LAYER.*/
-.green_under{
+.gray_fade{
   position: relative;
   z-index: 1;
 }
-.green_under::before{
+.gray_fade::before{
   position: absolute;
   content: "";
   width: 100%;
@@ -106,7 +152,6 @@ header h1{
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 2em 0;
   text-align: center;
 }
 
@@ -138,15 +183,13 @@ header h1{
     gap: 2em;
     padding: 4.25em 2em;
   }
-
   .text-and-image.cover{
     padding-bottom: 0;
   }
-
   .online_lesson{
     width: 500px;
     border-radius: 45% 45% 0 0;
-    margin-bottom: -0.4em;
+    margin-bottom: -3.6em;
   }
   .buttons{
     flex-direction: column;
@@ -164,7 +207,6 @@ header h1{
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
-    padding: 2em 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
