@@ -1,36 +1,170 @@
+/* CSS HEX
+--ash-gray: #cad2c5ff;
+--dark-sea-green: #84a98cff;
+--hookers-green: #52796fff;
+--dark-slate-gray: #354f52ff;
+--charcoal: #2f3e46ff;
+*/
+
+
 /*GLOABAL STYLES, FOR ALL ELEMENTS ALIKE: IMAGES, LINKS, FONTS ETC*/
 body{
   font-family: 'Montserrat', sans-serif;
+  color: #2f3e46ff;
 }
+
 header h1{
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  margin-top: 0.5em;
+  line-height: 1.2em;
 }
+
+.target{
+  width: 80px;
+  float: right;
+  margin: 0 0.5em;
+}
+
+.plan{
+  width: 200px;
+  border-radius: 50%;
+}
+
+.online_lesson{
+  width: 400px;
+  max-width: 100%;
+  border-radius: 1em;
+}
+
+
 /*UTILITY STYLES: SPACES(MARGIN/PADDING), SHADOWS, COLORS ETC. */
 /*WIDTH EXPLANATION: https://www.youtube.com/watch?v=YjtunZW7jxw*/
 /*EM(PADDING/MARGIN/BORDERS) REM(FONTS) EXPLANATION: https://www.youtube.com/watch?v=2ROnS_qHEP4*/
-.container{
-  width: 70rem;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-/*COMPONENT STYLES: COVERS, ETC.*/
-.text-and-image{
+.center_all{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.learn_online{
-  width: 400px;
-  max-width: 100%
-}
-.target{
-  width: 80px;
-  float: left;
-  margin: 0 0.5em;
+.container{
+  width: 80rem;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
-.site_header{
+.main_h{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding-bottom: 1em;
+}
 
+.bg_green{
+  background-color: #52796fff;
+  color: #cad2c5ff;
+}
+
+.section_padding{
+  padding: 4.25em 2em;
+}
+
+/*COMPONENT STYLES: COVERS, ETC.*/
+
+/*THIS SELECTS ALL CHILDS OF THE CONTAINER .TEXT-AND-IMAGES:
+.text-and-image > *{
+  margin: 1em;
+}
+*/
+
+/*THIS MAKES AN OVERLAY WHICH CAN BE TURNED INTO A LINE OR A FRONT/BACK LAYER.*/
+.green_under{
+  position: relative;
+  z-index: 1;
+}
+.green_under::before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1.4em;
+  background: linear-gradient(to right, #cad2c5ff, white);
+  bottom: 0;
+  left: 0;
+  margin-bottom: -0.1em;
+  z-index: -1;
+}
+
+.text-and-image{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em 1em;
+}
+
+.quote{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em 0;
+  text-align: center;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+}
+
+.buttons button{
+  margin: 0.5em;
+}
+
+.level{
+  color: #84a98cff;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+
+/*MEDIA QUERIES*/
+/*min.width means from that measure onwards*/
+/*With align-items: stretch; the header <div> and img <div> align at the top!*/
+@media (min-width:60em){
+  .text-and-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2em;
+    padding: 4.25em 2em;
+  }
+
+  .text-and-image.cover{
+    padding-bottom: 0;
+  }
+
+  .online_lesson{
+    width: 500px;
+    border-radius: 45% 45% 0 0;
+    margin-bottom: -0.4em;
+  }
+  .buttons{
+    flex-direction: column;
+    justify-content: stretch;
+    border-top: 1px solid #84a98cff;
+    padding: 0.5em 0;
+  }
+  header h1{
+    font-size: 2em;
+  }
+  .plan{
+    width: 300px;
+  }
+  .quote{
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 2em 0;
+    font-size: 1.5rem;
+  }
 }
