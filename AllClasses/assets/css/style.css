@@ -42,6 +42,10 @@ header h1{
   line-height: 1.5em;
 }
 
+header p{
+  line-height: 1.5em;
+}
+
 .target{
   width: 80px;
   float: right;
