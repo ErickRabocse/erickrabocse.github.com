@@ -12,13 +12,24 @@
   box-sizing: border-box;
 }
 
+body{
+  font-family: 'Montserrat', sans-serif;
+  color: #2f3e46ff;
+}
+
 img{
   max-width: 100%;
 }
 
-body{
+a{
   font-family: 'Montserrat', sans-serif;
-  color: #2f3e46ff;
+  color: #354f52ff;
+}
+
+.freepik_attribute{
+  padding: 0.5rem .8rem;
+  font-style: italic;
+  font-size: .7rem;
 }
 
 header h1{
@@ -54,8 +65,8 @@ header h1{
 }
 
 .article_img{
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.13);
@@ -63,16 +74,14 @@ header h1{
 
 .images{
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: space-between;
-  width: 100%;
-  max-width: 70em;
+  justify-content: center;
+  gap: 1.5em;
 }
 
 .subtitle{
   font-weight: bold;
   font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 li{
@@ -104,6 +113,11 @@ li{
 .bg_green{
   background-color: #52796fff;
   color: #cad2c5ff;
+}
+
+.bg_gray{
+  background-color: #cad2c5ff;
+  color: #2f3e46ff;
 }
 
 .section_padding{
@@ -170,7 +184,43 @@ li{
   margin: 0.5em 0;
 }
 
+/*HEADER FOR THE LEARNING RESOURCES SECTION*/
+.h_resources{
+  text-transform: uppercase;
+}
 
+.items{
+  gap: 3em;
+}
+
+.items header{
+  grid-column: span 12;
+}
+
+.items .item{
+  grid-column: span 12;
+  background-color: white;
+}
+
+/*THIS LETS YOU PLACE AN IMAGE IN A DIV CONTAINER TAKING UP A RELATIVE SPACE*/
+.item .background{
+  width: 100%;
+  padding-bottom: 56.25%;
+  background-position: center;
+  background-size: cover;
+}
+
+.item header{
+  padding: 1.5em 2em;
+}
+
+.item{
+  border-radius: 1em;
+}
+.background{
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em; 
+}
 /*MEDIA QUERIES*/
 /*min.width means from that measure onwards*/
 /*With align-items: stretch; the header <div> and img <div> align at the top!*/
@@ -208,5 +258,38 @@ li{
     justify-content: space-around;
     flex-direction: row;
     font-size: 1.2rem;
+  }
+  .element_with_images{
+    display: flex;
+  }
+  .element_with_images .text{
+    flex: 2; /*THIS PUSHES THE BROTHER ELEMENT TO THE OTHER SIDE IN (ROW/COLUMN) TERMS*/
+    max-width: 100%;
+    align-self: center;
+  }
+  .element_with_images .images{
+    flex: 1; /*THIS KEEPS THE IMAGES ORIGINAL SIZE & USES HALF THE SPACE IN WIDTH*/
+    display: grid; /*THIS PLACES THE ITEMS IN COLUMNS*/
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    grid-template-rows: repeat(2, minmax(0,1fr));
+    grid-template-areas: "left-image ."
+                        ". right-image"
+  }
+  .element_with_images .images img:first-child{
+    grid-area: left-image;
+  }
+  .element_with_images .images img:last-child{
+    grid-area: right-image;
+  }
+  /*THIS REVERSES THE ORDER OF THE ELEMENTS IN THE ARTICLE WITH CLASS: ELEMENT WITH IMAGES*/
+  .element_with_images:nth-child(even){
+    flex-direction: row-reverse;
+  }
+  .main-grid{
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0,1fr));
+  }
+  .items .item{
+    grid-column: span 4;
   }
 }
