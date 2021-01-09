@@ -261,7 +261,7 @@ button:focus {
   .online_lesson{
     width: 500px;
     border-radius: 45% 45% 0 0;
-    margin-bottom: -0.6em;
+    margin-bottom: -1.3em;
   }
   .buttons{
     flex-direction: column;
