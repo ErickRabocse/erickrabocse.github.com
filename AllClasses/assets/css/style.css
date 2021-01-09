@@ -1,13 +1,17 @@
-/* CSS HEX
---ash-gray: #cad2c5ff;
---dark-sea-green: #84a98cff;
---hookers-green: #52796fff;
---dark-slate-gray: #354f52ff;
---charcoal: #2f3e46ff;
-*/
-
 
 /*GLOABAL STYLES, FOR ALL ELEMENTS ALIKE: IMAGES, LINKS, FONTS ETC*/
+
+/*
+TO MAKE CIRCLES out of rectangular images:
+.image_name{
+border-radius: 50%;
+  /IN THE FUTURE: aspect-ratio: 1/1;/
+width: 300px;
+height: 300px;
+object-fit: fill;
+}
+*/
+
 *{
   box-sizing: border-box;
 }
@@ -44,16 +48,6 @@ header h1{
   margin: 0 0.5em;
 }
 
-  /*
-  TO MAKE CIRCLES out of rectangular images:
-  .image_name{
-  border-radius: 50%;
-    /IN THE FUTURE: aspect-ratio: 1/1;/
-  width: 300px;
-  height: 300px;
-  object-fit: fill;
-}
-  */
 .plan{
   width: 200px;
   border-radius: 50%;
@@ -88,9 +82,18 @@ li{
   line-height: 1.5em;
 }
 
+
+
 /*UTILITY STYLES: SPACES(MARGIN/PADDING), SHADOWS, COLORS ETC. */
 /*WIDTH EXPLANATION: https://www.youtube.com/watch?v=YjtunZW7jxw*/
 /*EM(PADDING/MARGIN/BORDERS) REM(FONTS) EXPLANATION: https://www.youtube.com/watch?v=2ROnS_qHEP4*/
+/* CSS HEX
+--ash-gray: #cad2c5ff;
+--dark-sea-green: #84a98cff;
+--hookers-green: #52796fff;
+--dark-slate-gray: #354f52ff;
+--charcoal: #2f3e46ff;
+*/
 .center_all{
   display: flex;
   justify-content: center;
@@ -130,13 +133,11 @@ li{
 
 
 /*COMPONENT STYLES: COVERS, ETC.*/
-
 /*THIS SELECTS ALL CHILDS OF THE CONTAINER .TEXT-AND-IMAGES:
 .text-and-image > *{
   margin: 1em;
 }
 */
-
 /*THIS MAKES AN OVERLAY WHICH CAN BE TURNED INTO A LINE OR A FRONT/BACK LAYER.*/
 .gray_fade{
   position: relative;
@@ -176,7 +177,24 @@ li{
 
 .buttons button{
   margin: 0.5em;
+  border-color: #52796fff;
+  background-color: #cad2c5ff;
+  color: #52796fff;
+  font-weight: bold;
+  border-width: 0.2em;
+  border-radius: 1em;
+  width: 3em;
 }
+
+button:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
 
 .level{
   color: #84a98cff;
@@ -219,7 +237,7 @@ li{
 }
 .background{
   border-top-right-radius: 1em;
-  border-top-left-radius: 1em; 
+  border-top-left-radius: 1em;
 }
 /*MEDIA QUERIES*/
 /*min.width means from that measure onwards*/
@@ -239,7 +257,7 @@ li{
   .online_lesson{
     width: 500px;
     border-radius: 45% 45% 0 0;
-    margin-bottom: -3.6em;
+    margin-bottom: -0.6em;
   }
   .buttons{
     flex-direction: column;
