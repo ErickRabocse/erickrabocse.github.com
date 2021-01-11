@@ -34,7 +34,7 @@ label.logo{
   color: white;
   font-size: 35px;
   line-height: 80px;
-  padding: 0 40px;
+  padding: 0 30px;
   font-weight: bold;
 }
 nav ul{
@@ -128,8 +128,8 @@ button:focus {
 }
 .test_btn_position{
   position: absolute;
-  top: 6em;
-  right: 2em;
+  top: 1.3em;
+  left: 5em;
   z-index: 2;
 }
 .btn_appearance{
@@ -149,7 +149,6 @@ button:focus {
 .home{
   height: 100vh;
   overflow: hidden;
-  position: relative;
 }
 .home .slide{
   position: absolute;
@@ -161,6 +160,7 @@ button:focus {
   background-position: center;
   z-index: 1;
   display: none;
+  padding: 0 15px;
   animation: slide 2s ease;
 }
 .home .slide.active{
@@ -238,6 +238,14 @@ button:focus {
   }
   .checkbtn{
     display: block;
+  }
+  .test_btn_position{
+    top: 0.8em;
+    left: 4.5em;
+  }
+  .btn_appearance{
+    height: 35px;
+    width: 35px;
   }
   ul{
     position: fixed;
