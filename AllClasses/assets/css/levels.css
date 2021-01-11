@@ -7,13 +7,6 @@
 --celadon-blue: #457b9dff;
 --prussian-blue: #1d3557ff;
 */
-/*CIRCLES out of rectangular images:
-.image_name{
-border-radius: 50%;
-width: 300px;
-height: 300px;
-object-fit: fill;
-}*/
 *{
   box-sizing: border-box;
 }
@@ -21,14 +14,7 @@ object-fit: fill;
 body{
   font-family: 'Montserrat', sans-serif;
   color: #1d3557ff;
-}
-.line_height{
-  line-height: 1.5em;
-}
-.center_all{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow-x: hidden;
 }
 /*Navigation Menu-bar*/
 nav>ul,li,a{
@@ -124,19 +110,7 @@ button:focus {
 
 
 /*UTILITY STYLES: SPACES(MARGIN/PADDING), SHADOWS, COLORS ETC. */
-/*WIDTH EXPLANATION: https://www.youtube.com/watch?v=YjtunZW7jxw*/
 /*EM(PADDING/MARGIN/BORDERS) REM(FONTS) EXPLANATION: https://www.youtube.com/watch?v=2ROnS_qHEP4*/
-.container{
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: flex-end;
-  align-content: space-around;
-  justify-content: center;
-  background: #a8dadcff;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #a8dadcff, #457b9dff, #1d3557ff);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #a8dadcff, #457b9dff, #1d3557ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
 .content{
   height: 100vh;
   top: 80px;
@@ -152,22 +126,18 @@ button:focus {
 .content_padding{
   padding: 2em 2em;
 }
-.next_btn_position{
+.test_btn_position{
   position: absolute;
-  top: 1em;
-  right: 1em;
-}
-.back_btn_position{
-  position: absolute;
-  top: 1em;
-  right: 4em;
+  top: 6em;
+  right: 2em;
+  z-index: 2;
 }
 .btn_appearance{
   height: 40px;
   width: 40px;
   border-radius: 50%;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.16), 0 3px 20px rgba(0, 0, 0, 0.23);
-  background-color: #457b9dff;
+  background-color: #e63946ff;
   color: #f1faeeff;
   font-weight: 400;
   cursor: pointer;
@@ -176,36 +146,74 @@ button:focus {
   justify-content: center;
 }
 /*COMPONENT STYLES: COVERS, ETC.*/
-/*SELECTS ALL CHILDS OF THE CONTAINER .TEXT-AND-IMAGES:
-.text-and-image > *{
-  margin: 1em;
-}*/
-/*Card with image on top, text on the bottom.*/
-.slider{
-  text-align: center;
-  margin: 1.5rem 0.5rem;
-  border: 1px solid black;
+.home{
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
-.card .card_background{
+.home .slide{
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
-  padding-bottom: 56.25%;
-  background-position: center;
+  height: 100%;
   background-size: cover;
+  background-position: center;
+  z-index: 1;
+  display: none;
+  animation: slide 2s ease;
 }
-.card header{
-  padding: 1.5em 2em;
+.home .slide.active{
+  display: flex;
 }
-.card_background{
-  border-top-right-radius: 1em;
-  border-top-left-radius: 1em;
+@keyframes slide{
+  0%{
+    opacity:0;transform:scale(1.1);
+  }
+  100%{
+    opacity:1;transform:scale(1);
+  }
 }
-.card{
-  border-bottom-right-radius: 1em;
-  border-bottom-left-radius: 1em;
+.slide_container{
+  max-width: 1170px;
+  margin: auto;
+}
+.home .slide_container{
+    flex-grow: 1;
+}
+.home .caption{
+  width: 50%;
+  border: 1px solid red;
+}
+.home .caption h1{
+  font-size: 40px;
+  color: #1d3557ff;
+  margin: 0;
+}
+.home .slide.active .caption h1{
+  opacity: 0;
+  animation: captionText .5s ease forwards;
+  animation-delay: 1s;
+}
+.home .caption p{
+  font-size: 24px;
+  margin: 10px 0;
+}
+.home .slide.active .caption p{
+  opacity: 0;
+  animation: captionText .5s ease forwards;
+  animation-delay: 1.2s;
+}
+@keyframes captionText{
+  0%{
+    opacity:0;transform:translateX(-100px);
+  }
+  100%{
+    opacity:1;transform:translateX(0px);
+  }
 }
 /*MEDIA QUERIES*/
 /*min.width means from that measure onwards*/
-/*With align-items: stretch; the header <div> and img <div> align at the top!*/
 @media (max-width:1025px){
   label.logo{
     font-size: 30px;
@@ -258,5 +266,4 @@ button:focus {
   #check:checked ~ ul{
     left: 0;
   }
-
 }
