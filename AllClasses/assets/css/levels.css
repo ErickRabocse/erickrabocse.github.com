@@ -222,7 +222,7 @@ button:focus {
 @media (max-width:577px){
   .content{
     height: 50em;
-    max-height: 90%;
+    max-height: 85%;
   }
   nav{
     height: 60px;
