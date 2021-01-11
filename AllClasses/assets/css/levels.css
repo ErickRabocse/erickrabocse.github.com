@@ -66,6 +66,7 @@ nav ul li a{
   padding: 6px 12px;
   border-radius: 4px;
   text-transform: uppercase;
+  font-weight: 500;
 }
 .checkbtn{
   font-size: 30px;
@@ -79,7 +80,7 @@ nav ul li a{
 #check{
   display: none;
 }
-a.active,a:hover{
+a:hover{
   background: #a8dadcff;
   transition: 1s;
 }
@@ -180,6 +181,11 @@ button:focus {
   margin: 1em;
 }*/
 /*Card with image on top, text on the bottom.*/
+.slider{
+  text-align: center;
+  margin: 1.5rem 0.5rem;
+  border: 1px solid black;
+}
 .card .card_background{
   width: 100%;
   padding-bottom: 56.25%;
@@ -244,7 +250,7 @@ button:focus {
     top: 60px;
     left: -100%;
     text-align: center;
-    transition: all .5s;
+    transition: all .3s;
   }
   nav ul li{
     display: block;
@@ -254,7 +260,7 @@ button:focus {
   nav ul li a{
     font-size: 20px;
   }
-  a:hover,a.active{
+  a:hover{
     background: none;
     color: silver;
   }
