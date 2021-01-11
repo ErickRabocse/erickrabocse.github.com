@@ -48,7 +48,7 @@ label.logo{
   color: white;
   font-size: 35px;
   line-height: 80px;
-  padding: 0 100px;
+  padding: 0 40px;
   font-weight: bold;
 }
 nav ul{
@@ -138,8 +138,8 @@ button:focus {
   background: linear-gradient(to right, #a8dadcff, #457b9dff, #1d3557ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .content{
-  height: 60em;
-  max-height: 90%;
+  height: 100vh;
+  top: 80px;
   width: 70em;
   max-width: 100%;
   background-color: white;
@@ -207,28 +207,19 @@ button:focus {
 /*min.width means from that measure onwards*/
 /*With align-items: stretch; the header <div> and img <div> align at the top!*/
 @media (max-width:1025px){
-  .content{
-    height: 80.5em;
-    max-height: 100%;
-  }
-}
   label.logo{
     font-size: 30px;
-    padding-left: 50px;
+    padding-left: 20px;
   }
   nav ul li a{
     font-size: 18px;
   }
-@media (max-width:768px){
-  .content{
-    height: 75em;
-    max-height: 92%;
-  }
 }
 @media (max-width:577px){
   .content{
-    height: 50em;
-    max-height: 91%;
+    height: 100vh;
+    max-height: 100%;
+    top: 60px;
   }
   nav{
     height: 60px;
