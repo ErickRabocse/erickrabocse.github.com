@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="title">Level A1</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="../assets/css/levels.css" rel="stylesheet">
+    <link href="../assets/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <nav class="menu_bar">
+      <!--menu bars button, only visible in small screens-->
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <!--menu bar: logo, test button, options & red fade decoration-->
+      <label class="logo">EO</label>
+      <button class="test_btn_position btn_appearance" type="button" name="button"><i class="fas fa-medal"></i></button>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">A1: index</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <span class="red_fade"></span>
+    </nav>
+    <!--Form type radio: only one can be chosen-->
+    <div id="slider">
+      <input type="radio" name="slider" id="slide1" checked>
+      <input type="radio" name="slider" id="slide2">
+      <input type="radio" name="slider" id="slide3">
+      <input type="radio" name="slider" id="slide4">
+      <input type="radio" name="slider" id="slide5">
+      <!--Slides content-->
+      <div id="slides">
+        <div id="overflow">
+          <div class="inner">
+            <div class="slide slide_1">
+              <div class="slide-content">
+                <h2>Slide1</h2>
+                <p>Content for slide 1</p>
+              </div>
+            </div>
+            <div class="slide slide_2">
+              <div class="slide-content">
+                <h2>Slide2</h2>
+                <p>Content for slide 2</p>
+              </div>
+            </div>
+            <div class="slide slide_3">
+              <div class="slide-content">
+                <h2>Slide3</h2>
+                <p>Content for slide 3</p>
+              </div>
+            </div>
+            <div class="slide slide_4">
+              <div class="slide-content">
+                <h2>Slide4</h2>
+                <p>Content for slide 4</p>
+              </div>
+            </div>
+            <div class="slide slide_5">
+              <div class="slide-content">
+                <h2>Slide5</h2>
+                <p>Content for slide 5</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Labels to control each slide-->
+      <div id="controls">
+        <label for="slide1"></label>
+        <label for="slide2"></label>
+        <label for="slide3"></label>
+        <label for="slide4"></label>
+        <label for="slide5"></label>
+      </div>
+      <!--Labels to assign bullets each slide-->
+      <div id="bullets">
+        <label for="slide1"></label>
+        <label for="slide2"></label>
+        <label for="slide3"></label>
+        <label for="slide4"></label>
+        <label for="slide5"></label>
+      </div>
+    </div>
+  </body>
+</html>

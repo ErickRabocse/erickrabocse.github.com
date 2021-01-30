@@ -1,0 +1,342 @@
+
+/*GLOABAL STYLES, FOR ALL ELEMENTS ALIKE: IMAGES, LINKS, FONTS ETC*/
+/* BLUE TONES: A1 LEVEL
+--imperial-red: #e63946ff;
+--honeydew: #f1faeeff;
+--powder-blue: #a8dadcff;
+--celadon-blue: #457b9dff;
+--prussian-blue: #1d3557ff;
+*/
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  color: #1d3557ff;
+  overflow-x: hidden;
+}
+/*Navigation Menu-bar STARTS!*/
+nav>ul,li,a{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+nav{
+  background-color: #1d3557ff;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+}
+label.logo{
+  color: white;
+  font-size: 30px;
+  line-height: 60px;
+  padding: 0 30px;
+  font-weight: bold;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+a:hover{
+  background: #a8dadcff;
+  transition: 1s;
+}
+/*Navigation Menu-bar ENDS!*/
+/*buttons style STARTS!*/
+.buttons{
+  display: flex;
+  align-items: center;
+}
+.buttons button{
+  margin: 0.5em;
+  border-color: #457b9dff;
+  background-color: #f1faeeff;
+  color: #1d3557ff;
+  font-weight: bold;
+  border-width: 0.2em;
+  border-radius: 1em;
+  width: 3em;
+}
+button:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
+button:focus {
+    outline: none;
+}
+/*buttons style ENDS!*/
+/*FRONT/BACK layer or line STARTS!*/
+.fade{
+  position: relative;
+  z-index: 1;
+}
+.red_fade::before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1.4em;
+  background: linear-gradient(to right,#e63946ff,#1d3557ff);
+  bottom: 0;
+  left: 0;
+  margin-bottom: -0.1em;
+  z-index: -1;
+}
+/*FRONT/BACK layer or line ENDS!*/
+
+
+
+
+
+/*UTILITY STYLES: SPACES(MARGIN/PADDING), SHADOWS, COLORS ETC. */
+/*EM(PADDING/MARGIN/BORDERS) REM(FONTS) EXPLANATION: https://www.youtube.com/watch?v=2ROnS_qHEP4*/
+
+/*Position of the medal button STARTS!*/
+.test_btn_position{
+  position: absolute;
+  top: 0.9em;
+  left: 6em;
+}
+.btn_appearance{
+  height: 31px;
+  width: 31px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.16), 0 3px 20px rgba(255, 255, 255, 0.23);
+  background-color: #e63946ff;
+  color: #f1faeeff;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*Position of the medal button ENDS!*/
+
+
+
+
+
+/*COMPONENT STYLES: COVERS, ETC.*/
+/*Centers the slider and its content*/
+#slider{
+  margin: 0 auto;
+  padding-top: 100px;
+  width: 1300px;
+  max-width: 100%;
+  text-align: center;
+}
+/*Hides the radio buttons*/
+#slider input[type=radio]{
+  display: none;
+}
+#slider label{
+  cursor: pointer;
+  text-decoration: none;
+}
+/*defines the slides "content area"*/
+#slides {
+  padding: 10px;
+  border: 4px solid #1d3557ff;
+  background: white;
+  position: relative;
+  z-index:1;
+}
+/*hides overflown content in this "overflow" area*/
+#overflow{
+  width: 100%;
+  overflow: hidden;
+}
+/*The inner content is pushed to the left to hide it since the beginning.*/
+#slide1:checked ~ #slides .inner {
+  margin-left: 0;
+}
+#slide2:checked ~ #slides .inner {
+  margin-left: -100%;
+}
+#slide3:checked ~ #slides .inner {
+  margin-left: -200%;
+}
+#slide4:checked ~ #slides .inner {
+  margin-left: -300%;
+}
+#slide5:checked ~ #slides .inner {
+  margin-left: -400%;
+}
+/*Defines the transition for the slides. The width, pushes everything to the right!*/
+#slides .inner{
+  transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  width: 500%;
+  line-height: 0;
+  height: 600px;
+}
+/*Places the slides in a row, where only one is seen at a time*/
+#slides .slide{
+  width: 20%;
+  float: left;
+  display: block;
+  height: 100%;
+  color: white;
+}
+/*Specifies the background of each slide*/
+#slides .slide_1{
+  background-color: #132339;
+}
+#slides .slide_2{
+  background-color: #203a60;
+}
+#slides .slide_3{
+  background-color: #2d5286;
+}
+#slides .slide_4{
+  background-color: #3969ac;
+}
+#slides .slide_5{
+  background-color: #5382c6;
+}
+/*Adds some padding to the slide content*/
+.slide-content{
+  padding: 10px;
+}
+/*Places the controls on screen*/
+#controls{
+  margin: -340px 0 0 0;
+  width: 100%;
+  height: 50px;
+  z-index: 3;
+  position: relative;
+}
+/*control's label appearance*/
+#controls label{
+  transition: opacity 0.2s ease-out;
+  display: none;
+  width: 50px;
+  height: 50px;
+  opacity: .4;
+}
+/*control's label interaction*/
+#controls label:hover{
+  opacity: 1;
+}
+/*places the next/back buttons*/
+#slide1:checked ~ #controls label:nth-child(2),
+#slide2:checked ~ #controls label:nth-child(3),
+#slide3:checked ~ #controls label:nth-child(4),
+#slide4:checked ~ #controls label:nth-child(5),
+#slide5:checked ~ #controls label:nth-child(1){
+  background: url(https://www.flaticon.com/svg/vstatic/svg/570/570221.svg?token=exp=1611976002~hmac=4a79ef8d02ad4d78b9fd14fc845c76ca) no-repeat;
+  float: right;
+  margin: 0 -50px 0 0;
+  display: block;
+}
+#slide1:checked ~ #controls label:nth-last-child(2),
+#slide2:checked ~ #controls label:nth-last-child(3),
+#slide3:checked ~ #controls label:nth-last-child(4),
+#slide4:checked ~ #controls label:nth-last-child(5),
+#slide5:checked ~ #controls label:nth-last-child(1){
+  background: url(https://www.flaticon.com/svg/vstatic/svg/570/570220.svg?token=exp=1611976100~hmac=9b3be02c6ab224e2c6ed4cf0fd3e05b3) no-repeat;
+  float: left;
+  margin: 0 0 0 -50px;
+  display: block;
+}
+#bullets{
+  margin: 100px 0 0;
+  text-align: center;
+}
+#bullets label{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: #a8dadcff;
+  margin: 210px 10px 0 10px;
+}
+
+/*MEDIA QUERIES*/
+/*min.width means from that measure onwards*/
+@media (max-width:1025px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 20px;
+  }
+  nav ul li a{
+    font-size: 18px;
+  }
+}
+@media (max-width:577px){
+  nav{
+    height: 60px;
+  }
+  label.logo, .checkbtn{
+    font-size: 25px;
+    line-height: 60px;
+  }
+  .checkbtn{
+    display: block;
+  }
+  .test_btn_position{
+    top: 0.8em;
+    left: 4.5em;
+  }
+  .btn_appearance{
+    height: 35px;
+    width: 35px;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #a8dadcff;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #a8dadcff, #457b9dff, #1d3557ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #a8dadcff, #457b9dff, #1d3557ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    top: 60px;
+    left: -100%;
+    text-align: center;
+    transition: all .3s;
+  }
+  nav ul li{
+    display: block;
+    margin: 80px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover{
+    background: none;
+    color: silver;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+  .red_fade{
+    display: none;
+  }
+}
