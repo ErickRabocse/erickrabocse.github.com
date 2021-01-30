@@ -249,7 +249,7 @@ button:focus {
 #slide3:checked ~ #controls label:nth-child(4),
 #slide4:checked ~ #controls label:nth-child(5),
 #slide5:checked ~ #controls label:nth-child(1){
-  background: url(https://www.flaticon.com/svg/vstatic/svg/570/570221.svg?token=exp=1611976002~hmac=4a79ef8d02ad4d78b9fd14fc845c76ca) no-repeat;
+  background-image: url("right-arrow.png");
   float: right;
   margin: 0 -50px 0 0;
   display: block;
@@ -259,7 +259,7 @@ button:focus {
 #slide3:checked ~ #controls label:nth-last-child(4),
 #slide4:checked ~ #controls label:nth-last-child(3),
 #slide5:checked ~ #controls label:nth-last-child(2){
-  background: url(https://www.flaticon.com/svg/vstatic/svg/570/570220.svg?token=exp=1611976100~hmac=9b3be02c6ab224e2c6ed4cf0fd3e05b3) no-repeat;
+  background: url(https://www.flaticon.com/svg/vstatic/svg/570/570220.svg?token=exp=1611976100~hmac=9b3be02c6ab224e2c6ed4cf0fd3e05b3);
   float: left;
   margin: 0 0 0 -50px;
   display: block;
