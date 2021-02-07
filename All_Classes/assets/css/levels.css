@@ -237,6 +237,21 @@ button:focus {
   background-size: cover;
   opacity: .5;
 }
+#slides .slide_6{
+  position: relative;
+}
+/*Background image with transparency*/
+#slides .slide_6::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("../images/6_grammar.jpg");
+  background-size: cover;
+  opacity: .5;
+}
 .header-content>h2{
   position: relative;
   text-align: center;
@@ -259,19 +274,24 @@ button:focus {
   line-height: 2em;
   margin: 10px 10px 10px 10px;
   padding: 10px;
-  border: 1px dotted blue;
+  border-radius: 0.5em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 20px rgba(0, 0, 0, 0.23);
   height: 39em;
   width: 60%;
 }
 #slider div.slide-image{
   margin: 10px 10px 10px 10px;
   padding: 10px;
-  border: 1px dotted blue;
   height: 39em;
   width: 35%;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+/*images settings*/
+img{
+  height: 500px;
 }
 #slider div.slide-grammar{
   line-height: 2em;
@@ -281,7 +301,14 @@ button:focus {
   height: 39em;
   width: 98%;
 }
-/*List appearance, by default it's none???*/
+/*switches the order of the slides elements. I had to add the class switch
+because they content_plus_images class was not a direct offspring!*/
+.switch:nth-child(1n){
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/*List appearance "lightbulb bullets :)", by default it's none???*/
 .list li{
   margin: 0;
 	padding: 10px 0 10px 40px;
