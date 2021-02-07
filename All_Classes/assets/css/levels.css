@@ -283,25 +283,14 @@ button:focus {
 }
 /*List appearance, by default it's none???*/
 .list li{
-  list-style: inside;
+  margin: 0;
+	padding: 10px 0 10px 40px;
+	list-style: none;
+	background-image: url('../images/lightbulb.png');
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 40px;
 }
-
-
-/*.list li{
-  list-style: none;
-}
-.list li::before{
-  content: '';
-  height: 10px;
-  width: 10px;
-  background-size: 4px;
-  background-image: url('../images/lightbulb.png');
-  background-repeat: no-repeat;
-  margin-right: 0px;
-}*/
-
-
-
 
 
 /*Places the controls on screen*/
