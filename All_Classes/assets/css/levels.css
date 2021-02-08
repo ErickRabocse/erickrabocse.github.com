@@ -139,8 +139,60 @@ button:focus {
   justify-content: center;
 }
 /*Position of the medal button ENDS!*/
-
-
+/*images settings*/
+img{
+  height: 500px;
+}
+.lexicon{
+  margin-left: auto;
+  margin-right: auto;
+}
+.lexicon, td, th{
+  border-collapse: collapse;
+  padding: 2px 6px;
+}
+.top_cell{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #1d3557ff;
+  color: white;
+}
+.lexicon td{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+.lexicon td:first-child{
+  border-left: none;
+}
+.lexicon td:last-child{
+  border-right: none;
+}
+.in_header{
+  color: #e63946ff;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.dialogue li:nth-child(even){
+  margin: 0;
+	padding: 5px 0 5px 40px;
+	list-style: none;
+	background-image: url('../images/voice-right.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 25px;
+}
+.dialogue li:nth-child(odd){
+  margin: 0;
+	padding: 5px 0 5px 40px;
+	list-style: none;
+	background-image: url('../images/voice-left.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 25px;
+}
+.dialogue li:nth-child(2n){
+  font-weight: bold;
+}
 
 
 
@@ -237,6 +289,14 @@ button:focus {
   background-size: cover;
   opacity: .5;
 }
+#slides .slide_4 .slide-content,
+#slides .slide_6 .slide-content,
+#slides .slide_7 .slide-content
+{
+  overflow: scroll;
+}
+
+
 .header-content>h2{
   position: relative;
   text-align: center;
@@ -289,14 +349,9 @@ button:focus {
   width: 100%;
 }
 
-/*images settings*/
-img{
-  height: 500px;
-}
-
 /*switches the order of the slides elements. I had to add the class switch
 because they content_plus_images class was not a direct offspring!*/
-.switch:nth-child(1n){
+.switch{
   display: flex;
   flex-direction: row-reverse;
 }
@@ -308,7 +363,7 @@ because they content_plus_images class was not a direct offspring!*/
 	list-style: none;
 	background-image: url('../images/lightbulb.png');
 	background-repeat: no-repeat;
-	background-position: left top;
+	background-position: left center;
 	background-size: 40px;
 }
 
