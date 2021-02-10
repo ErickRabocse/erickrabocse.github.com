@@ -289,6 +289,22 @@ img{
   background-size: cover;
   opacity: .5;
 }
+#slides .slide_6{
+  position: relative;
+}
+/*Background image with transparency*/
+#slides .slide_6::after{
+  content: "";
+  background-image: url("../images/6_grammar.jpg");
+  background-size: cover;
+  opacity: .2;
+  top: 0;
+  right: 0;
+  bottom: 8px;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
 #slides .slide_4 .slide-content,
 #slides .slide_6 .slide-content,
 #slides .slide_7 .slide-content
@@ -303,6 +319,11 @@ img{
   line-height: 1em;
   color: #1d3557ff;
   font-size: 2em;
+  text-shadow:
+    0.01em 0 black,
+    0 0.01em black,
+    -0.01em 0 black,
+    0 -0.01em black;
 }
 /*Distrubution of divs inside each slide: headers, content & images*/
 .content_plus_images{
