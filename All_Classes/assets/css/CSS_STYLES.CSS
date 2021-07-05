@@ -1,0 +1,52 @@
+
+/*STYLES NOT USED!*/
+
+/*Add this code to a HTML slide if you want a rotating cube
+<div class="cube"></div>
+.cube{
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  transition: width 2s, height 2s, transform 3s;
+  transition-timing-function: ease;
+}
+div.cube:hover{
+  width: 300px;
+  height: 300px;
+  transform: rotate(180deg);
+  animation-name: ejemplo;
+  animation-duration: 3s;
+}
+@keyframes ejemplo{
+  0%{background-color: red};
+  25%{background-color: orange};
+  50%{background-color: yellow};
+  100%{background-color: green};
+}
+*/
+
+/*List appearance "lightbulb bullets :)" WHEN USING A PNG IMAGE
+.list li{
+  margin-top: -20px;
+	padding: 10px 0 10px 40px;
+	list-style: none;
+	background-image: url('../images/lightbulb.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 30px;
+}
+
+/*Thumb's effect, image enlarges!
+.vocabulary_video{
+  margin: 1px;
+  position: relative;
+  height: 100px;
+  border: 5px inset #a8dadcff;
+  border-radius: 10px;
+  transition: height .3s;
+}
+.vocabulary_video:hover{
+  height: 150px;
+  box-shadow: 2px 2px 6px 6px rgba(0, 150, 150, 0.8);
+}
+*/

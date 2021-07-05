@@ -1,0 +1,90 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/*MAX MIN WIDTH CONTAINER*/
+div.max_min{
+  background-color: green;
+  margin: 0 auto;
+  height: 100px;
+  /*"BEFORE"-->
+  width: 100%;
+  max-width: 600px;
+  "NOW"-->*/
+  width: min(600px, 100%);
+  /*OR you can enlarge the object to the available size of the container!
+  width: max(600px, 100%);
+  */
+  margin: 10px auto;
+}
+
+/*CARD with percentages and "calc".
+WITH MEDIA QUERIES YOU HAVE TO CHANGE BOTH WIDTHS: FORM(CALC) & ASIDE(PIXELS)*/
+.card_percentages{
+  max-width: 960px;
+  background-color: red;
+  margin: 0 auto;
+  height: 200px;
+  margin-bottom: 10px;
+}
+.card_percentages form{
+  display: inline-block;
+  background-color: pink;
+  height: 100%;
+  /*"BEFORE" -->
+  width: 80%;
+  "NOW"-->*/
+  width: calc(100% - 200px);
+}
+.card_percentages aside{
+  display: inline-block;
+  background-color: yellow;
+  height: 100%;
+  /*"BEFORE" -->
+  width: 20%;
+  "NOW"-->*/
+  width: 200px;
+}
+
+/*CARD with GRID!*/
+.card_grid{
+  background-image: url("https://images.pexels.com/photos/844297/pexels-photo-844297.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");;
+  background-size: cover;
+  margin: 0 auto;
+  max-width: 960px;
+  height: 200px;
+  display: grid;
+  /*For a two sections div, the one on the right with a defined size
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  in pixels use --> grid-template-columns: 1fr 300px;
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  "1fr" is for the 1st element (form) & "300px" is for the 2nd element (aside)*/
+  grid-template-columns: 1fr 1fr 1fr;
+  /*I can center vertically the content because I assigned a smaller height (50%
+   insted of 100%) and set the "align-items:center" property to the container.*/
+  align-items: center;
+}
+.card_grid form{
+  background-color: green;
+  height: 50%;
+}
+.card_grid div{
+  position: relative;
+  background-color: white;
+  height: 50%;
+}
+.card_grid div::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Coat_of_arms_of_Mexico.svg/1200px-Coat_of_arms_of_Mexico.svg.png");;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0.5em;
+}
+.card_grid aside{
+  background-color: red;
+  height: 50%;
+}

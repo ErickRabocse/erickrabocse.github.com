@@ -1,5 +1,3 @@
-
-/*GLOABAL STYLES, FOR ALL ELEMENTS ALIKE: IMAGES, LINKS, FONTS ETC*/
 /* BLUE TONES: A1 LEVEL
 --imperial-red: #e63946ff;
 --honeydew: #f1faeeff;
@@ -16,7 +14,8 @@ body{
   color: #1d3557ff;
   overflow-x: hidden;
 }
-/*Navigation Menu-bar STARTS!*/
+
+/*Navigation Menu-bar*/
 nav>ul,li,a{
   padding: 0;
   margin: 0;
@@ -27,7 +26,7 @@ nav{
   background-color: #1d3557ff;
   height: 80px;
   width: 100%;
-  position: fixed;
+  position: absolute;
   z-index: 2;
 }
 label.logo{
@@ -70,8 +69,9 @@ a:hover{
   background: #a8dadcff;
   transition: 1s;
 }
-/*Navigation Menu-bar ENDS!*/
-/*buttons style STARTS!*/
+
+
+/*Buttons style STARTS!*/
 .buttons{
   display: flex;
   align-items: center;
@@ -90,36 +90,23 @@ button:hover{
   opacity: 0.8;
   cursor: pointer;
 }
-button:focus {
-    outline: none;
-}
-/*buttons style ENDS!*/
-/*FRONT/BACK layer or line STARTS!*/
-.fade{
-  position: relative;
-  z-index: 1;
-}
-.red_fade::before{
+
+
+/*Red fade effect nav bar*/
+.golden_fade::before{
   position: absolute;
   content: "";
   width: 100%;
   height: 1.4em;
-  background: linear-gradient(to right,#e63946ff,#1d3557ff);
+  background: linear-gradient(to right,goldenrod 70%,#1d3557ff);
   bottom: 0;
   left: 0;
   margin-bottom: -0.1em;
   z-index: -1;
 }
-/*FRONT/BACK layer or line ENDS!*/
 
 
-
-
-
-/*UTILITY STYLES: SPACES(MARGIN/PADDING), SHADOWS, COLORS ETC. */
-/*EM(PADDING/MARGIN/BORDERS) REM(FONTS) EXPLANATION: https://www.youtube.com/watch?v=2ROnS_qHEP4*/
-
-/*Position of the medal button STARTS!*/
+/*Position of the medal button*/
 .test_btn_position{
   position: absolute;
   top: 0.9em;
@@ -130,7 +117,7 @@ button:focus {
   width: 31px;
   border-radius: 50%;
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.16), 0 3px 20px rgba(255, 255, 255, 0.23);
-  background-color: #e63946ff;
+  background-color: goldenrod;
   color: #f1faeeff;
   font-weight: 400;
   cursor: pointer;
@@ -138,70 +125,14 @@ button:focus {
   align-items: center;
   justify-content: center;
 }
-/*Position of the medal button ENDS!*/
-/*images settings*/
-img{
-  height: 500px;
-}
-.lexicon{
-  margin-left: auto;
-  margin-right: auto;
-}
-.lexicon, td, th{
-  border-collapse: collapse;
-  padding: 2px 6px;
-}
-.top_cell{
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  background-color: #1d3557ff;
-  color: white;
-}
-.lexicon td{
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-}
-.lexicon td:first-child{
-  border-left: none;
-}
-.lexicon td:last-child{
-  border-right: none;
-}
-.in_header{
-  color: #e63946ff;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-.dialogue li:nth-child(even){
-  margin: 0;
-	padding: 5px 0 5px 40px;
-	list-style: none;
-	background-image: url('../images/voice-right.png');
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: 25px;
-}
-.dialogue li:nth-child(odd){
-  margin: 0;
-	padding: 5px 0 5px 40px;
-	list-style: none;
-	background-image: url('../images/voice-left.png');
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: 25px;
-}
-.dialogue li:nth-child(2n){
-  font-weight: bold;
-}
 
 
-
-/*COMPONENT STYLES: COVERS, ETC.*/
+/*SLIDER SETTINGS*/
 /*Centers the slider and its content*/
 #slider{
   margin: 0 auto;
   padding-top: 100px;
-  width: 1300px;
+  width: 90vw;
   max-width: 100%;
 }
 /*Hides the radio buttons*/
@@ -210,17 +141,20 @@ img{
 }
 #slider label{
   cursor: pointer;
-  text-decoration: none;
 }
-/*defines the slides "content area"*/
+/*Defines the slides "content area"*/
 #slides {
   padding: 10px;
-  border: 4px solid #1d3557ff;
+  border-right: 4px solid #a8dadcff;
+  border-bottom: 4px solid #a8dadcff;
+  border-left: 4px solid #1d3557ff;
+  border-top: 4px solid #1d3557ff;
+  border-radius: 0.5em;
   background: white;
   position: relative;
   z-index:1;
 }
-/*hides overflown content in this "overflow" area*/
+/*Hides overflown content in this "overflow" area*/
 #overflow{
   width: 100%;
   overflow: hidden;
@@ -250,12 +184,6 @@ img{
 #slide8:checked ~ #slides .inner {
   margin-left: -700%;
 }
-#slide9:checked ~ #slides .inner {
-  margin-left: -800%;
-}
-#slide10:checked ~ #slides .inner {
-  margin-left: -900%;
-}
 /*Defines the transition for the slides. The width, pushes everything to the right!*/
 #slides .inner{
   transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
@@ -270,73 +198,17 @@ img{
   height: 100%;
   color: #1d3557ff;
 }
-/*Slides cover appearance*/
-#slides .slide_1{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/*Background image with transparency*/
-#slides .slide_1::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: url("../images/1_goal.jpg");
-  background-size: cover;
-  opacity: .5;
-}
-#slides .slide_6{
-  position: relative;
-}
-/*Background image with transparency*/
-#slides .slide_6::after{
-  content: "";
-  background-image: url("../images/6_grammar.jpg");
-  background-size: cover;
-  opacity: .2;
-  top: 0;
-  right: 0;
-  bottom: 8px;
-  left: 0;
-  position: absolute;
-  z-index: -1;
-}
-#slides .slide_4 .slide-content,
-#slides .slide_6 .slide-content,
-#slides .slide_7 .slide-content
-{
-  overflow: scroll;
-}
 
 
-.header-content>h2{
-  position: relative;
-  text-align: center;
-  line-height: 1em;
-  color: #1d3557ff;
-  font-size: 2em;
-  text-shadow:
-    0.01em 0 black,
-    0 0.01em black,
-    -0.01em 0 black,
-    0 -0.01em black;
-}
+
 /*Distrubution of divs inside each slide: headers, content & images*/
 .content_plus_images{
+  position: relative;
   display: flex;
   justify-content: center;
 }
-#slider div.slide-header{
-  padding: 20px 20px;
-  background: linear-gradient(to right,#1d3557ff,#a8dadcff,white);
-  border-radius: .5em;
-  color: white;
-}
-#slider div.slide-content{
+.slide_content{
+  position: relative;
   line-height: 2em;
   margin: 10px 0px 10px 0px;
   padding: 20px;
@@ -344,23 +216,345 @@ img{
   -webkit-box-shadow: inset 1px -1px 22px 1px rgba(168, 218, 220, 1);
   -moz-box-shadow: inset 1px -1px 22px 1px rgba(168, 218, 220, 1);
   box-shadow: inset 1px -1px 22px 1px rgba(168, 218, 220, 1);
-  height: 39em;
-  width: 60%;
+  height: 70vh;
+  width: 55vw;
 }
-#slider div.slide-image{
+.slide_image{
+  position: relative;
   margin: 10px 0px 10px 0px;
   padding: 0px;
-  height: 39em;
-  width: 40%;
+  height: 70vh;
+  width: 45vw;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
+/*Switches the order of the slides elements.
+I had to add the class switch
+because the content_plus_images class was not a direct offspring!*/
+.switch{
+  display: flex;
+  flex-direction: row-reverse;
+}
+/*SLIDES WHOSE OVERFLOW SCROLLS*/
+#slides .slide_4 .slide_content,
+#slides .slide_6 .slide_grammar{
+  overflow: scroll;
+}
+/*Background ICONS of each slide*/
+#conversation_right{
+  background-image: url('../images/conversation.png');
+  background-repeat: no-repeat;
+  background-position: 96.5% 3.5%;
+  background-size: 60px;
+}
+#conversation_left{
+  background-image: url('../images/conversation.png');
+  background-repeat: no-repeat;
+  background-position: 4.5% 3.5%;
+  background-size: 60px;
+}
+#note_taking_grammar_left{
+  background-image: url('../images/notes.png');
+  background-repeat: no-repeat;
+  background-position: 1.5% 3.5%;
+  background-size: 60px;
+}
+#note_taking_right{
+  background-image: url('../images/notes.png');
+  background-repeat: no-repeat;
+  background-position: 96.5% 3.5%;
+  background-size: 60px;
+}
+#note_taking_left{
+  background-image: url('../images/notes.png');
+  background-repeat: no-repeat;
+  background-position: 3.5% 3.5%;
+  background-size: 60px;
+}
+#presentation_left{
+  background-image: url('../images/present.png');
+  background-repeat: no-repeat;
+  background-position: 5% 3.5%;
+  background-size: 60px;
+  z-index: 3;
+}
+#quiz{
+  background-image: url('../images/quiz.png');
+  background-repeat: no-repeat;
+  background-position: 95% 3.5%;
+  background-size: 60px;
+}
 
-#slider div.slide-grammar{
+/*SELECTION STYLES*/
+p::selection, li::selection, h1::selection, h2::selection, h3::selection{
+  background-color: #457b9dff;
+  color: goldenrod;
+}
+
+/*h3 STYLES*/
+h3{
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  width: 100%;
+  text-align: center;
+  color: #457b9dff;
+}
+
+/*IMAGES STYLE*/
+.responsive{
+  height: auto;
+  max-width: 100%;
+}
+.polaroid_image{
+  position: relative;
+  width: 32vw;
+  padding: 10px;
+  margin: auto;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: .5em;
+  background: repeating-radial-gradient(white 99%, #a8dadcff);
+}
+.zoom_image{
+  width: 100%;
+  height: 67vh;
+  object-fit: cover;
+}
+
+/*SLIDES HEADERS STYLE*/
+.slide_header{
+  padding: 20px 20px;
+  background: linear-gradient(to right,#1d3557ff,#a8dadcff,white);
+  border-radius: .5em;
+  color: white;
+}
+
+/*TABLES STYLE*/
+.table{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.table, td, th{
+  border-collapse: collapse;
+  padding: 10px 10px;
+  width: auto;
+}
+.table td{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.table td:first-child{
+  border-left: none;
+}
+.table td:last-child{
+  border-right: none;
+}
+.table tr:first-child{
+  background-color: #1d3557ff;
+  color: white;
+}
+table.grammar td, tr{
+  text-align: center;
+}
+.first_row, table.grammar td:last-child{
+  background-color: #a8dadcff;
+  color: #1d3557ff;
+  font-weight: bold;
+}
+
+/*LISTS STYLE*/
+.list li, .list ol.none li{
+  line-height: 1.5em;
+}
+.list li{
+  margin-bottom: 1em;
+}
+.list li::before{
+  list-style-type: none;
+  content: "✔️";
+  background-color: #a8dadcff;
+  border-radius: 30%;
+  margin-right: 10px;
+}
+/*Class "none" for list elements with no style, some margins & different color.*/
+li.none::before, ol.none li::before{
+  content: none;
+}
+li.none, ol.none li{
+  margin-top: -20px;
+  margin-bottom: 20px;
+  line-height: 10px;
+	padding: 10px 0;
+  color: #457b9dff;
+}
+
+
+
+/*CONTENT OF SLIDE 1*/
+#slides .slide_1{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+/*Background image with transparency*/
+.slide_1::before{
+  content: "";
+  position: absolute;
+  background-image: url("../images/A1_cover.jpg");
+  background-size: cover;
+  opacity: .3;
+  inset: 0;
+  /* inset: 0, replaces all the code below
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  */
+}
+.light_purple_gradient{
+  padding: 10px 10px;
+  background: linear-gradient(to right,rgba(142, 68, 173, .5) 20%, rgba(241, 231, 254, .3));
+  border-radius: .5em;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, .3);
+}
+.header_content>h2{
+  position: relative;
+  top: 10px;
+  text-align: center;
+  line-height: 1.5em;
+  color: #1d3557ff;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+/*CONTENT OF SLIDE 2*/
+.rotate_effect{
+  width:200px;
+  filter: blur(4px);
+  transition: transform 3s, width 3s, filter 3s;
+  transition-timing-function: ease;
+}
+.rotate_effect:hover{
+  transform: rotate(360deg);
+  width: 450px;
+  filter: blur(0);
+}
+
+
+/*CONTENT OF SLIDE 4*/
+.activity_btn{
+  position: absolute;
+  height: 40px;
+  margin-top:22px;
+  margin-left: 672px;
+}
+.green-section{
+  background-color: #f1faeeff;;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 1em;
+}
+.dialogue li:nth-child(even){
+  margin: 0;
+	padding: 5px 0 5px 40px;
+	list-style: none;
+	background-image: url('../images/voice-right.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 25px;
+}
+.dialogue li:nth-child(odd){
+  margin: 0;
+	padding: 5px 0 5px 40px;
+	list-style: none;
+	background-image: url('../images/voice-left.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 25px;
+}
+.dialogue li:nth-child(2n){
+  color: #228B22;
+}
+/*Highlights my acronym PLANOS*/
+.list_acronym li::first-letter{
+  font-weight: bold;
+  margin-left: 40px;
+  color: #e63946ff;
+}
+
+
+/*CONTENT OF SLIDE 5*/
+.vocab_video_container{
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/*Vocabulary video icons*/
+.zoom_image_text{
+  position: absolute;
+  left: 14px;
+  bottom: 1px;
+  line-height: 1em;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, .4);
+}
+.image_plus_text{
+  position: relative;
+  margin: 10px;
+  height: 150px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: .5em;
+}
+.vocabulary_video{
+  height: 100px;
+  border: 5px inset #a8dadcff;
+  border-radius: 10px;
+}
+.vocab_image_text{
+  position: absolute;
+  bottom: 1px;
+  margin: 0 0 2px -7px;
+  text-align: center;
+  line-height: 1em;
+  font-size: 1em;
+  font-weight: bold;
+  color: #1d3557ff;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, .3);
+}
+
+
+/*CONTENT OF SLIDE 6*/
+/*Background image with transparency*/
+.slide_6{
+  position: relative;
+}
+#slides .slide_6::after{
+  content: "";
+  position: absolute;
+  background-image: url("../images/10_challenge.jpg");
+  background-size: cover;
+  opacity: .05;
+  top: 0;
+  right: 0;
+  bottom: 8px;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
+.slide_grammar{
   line-height: 2em;
-  margin: 10px 5px 10px 5px;
+  margin: 10px 10px 10px 10px;
   padding: 20px;
   border-radius: 0.5em;
   -webkit-box-shadow: inset 1px -1px 22px 1px rgba(168, 218, 220, 1);
@@ -370,25 +564,58 @@ img{
   width: 100%;
 }
 
-/*switches the order of the slides elements. I had to add the class switch
-because they content_plus_images class was not a direct offspring!*/
-.switch{
-  display: flex;
-  flex-direction: row-reverse;
+
+/*CONTENT OF SLIDE 7*/
+.hidden_text{
+  position: absolute;
+  width: 400px;
+  text-align: center;
+  margin-top: 320px;
+  margin-left: 33%;
+  margin-right: 33%;
+}
+.polaroid_floating{
+  animation: peek 3s infinite alternate ease-in;
+  /*The line above replaces all of this. I use infinite, because the animation is
+  activated as the page loads. By the time I reach the 10th slide the animation
+  has ended!
+  animation-name: peek;
+  animation-duration: 2s;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+  animation-timing-function: ease;
+  */
+}
+@keyframes peek {
+  0%{transform: translateY(-50px);};
+  100% {transform: translateY(50px);};
+}
+/*div.polaroid:hover{
+  transform: translateY(-65px);
+}*/
+.polaroid_text{
+  text-align: center;
+  font-weight: bold;
+  padding-top: 10px;
+  color: #1d3557ff;
+}
+.text_shadow{
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, .1);
+  font-weight: bold;
+  font-size: 1em;
 }
 
-/*List appearance "lightbulb bullets :)", by default it's none???*/
-.list li{
-  margin: 0;
-	padding: 10px 0 10px 40px;
-	list-style: none;
-	background-image: url('../images/lightbulb.png');
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: 40px;
+
+/*CONTENT OF SLIDE 8*/
+.enlarge{
+  transition: transform 1s;
+}
+.enlarge:hover{
+  transform: scale(2, 2);
 }
 
 
+/*CONTROLS AT THE BOTTOM OF THE SLIDER: LITTLE RED BULLETS & ARROWS ON THE SIDES*/
 /*Places the controls on screen*/
 #controls{
   margin: -340px 0 0 0;
@@ -397,7 +624,7 @@ because they content_plus_images class was not a direct offspring!*/
   z-index: 3;
   position: relative;
 }
-/*control's label appearance*/
+/*Control's label appearance*/
 #controls label{
   transition: opacity 0.2s ease-out;
   display: none;
@@ -405,11 +632,11 @@ because they content_plus_images class was not a direct offspring!*/
   height: 50px;
   opacity: .5;
 }
-/*control's label interaction*/
+/*Control's label interaction*/
 #controls label:hover{
   opacity: 1;
 }
-/*places the next/back buttons*/
+/*Places the next/back buttons*/
 #slide1:checked ~ #controls label:nth-child(2),
 #slide2:checked ~ #controls label:nth-child(3),
 #slide3:checked ~ #controls label:nth-child(4),
@@ -417,9 +644,7 @@ because they content_plus_images class was not a direct offspring!*/
 #slide5:checked ~ #controls label:nth-child(6),
 #slide6:checked ~ #controls label:nth-child(7),
 #slide7:checked ~ #controls label:nth-child(8),
-#slide8:checked ~ #controls label:nth-child(9),
-#slide9:checked ~ #controls label:nth-child(10),
-#slide10:checked ~ #controls label:nth-child(1){
+#slide8:checked ~ #controls label:nth-child(1){
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyDQoJCQljLTEwLjQ5MiwxMC41MDQtMTAuNDkyLDI3LjU3NiwwLDM4LjA2NEwyOTMuMzk4LDI0NS45bC0xODQuMDYsMTg0LjA2Yy01LjA2NCw1LjA2OC03Ljg2LDExLjgyNC03Ljg2LDE5LjAyOA0KCQkJYzAsNy4yMTIsMi43OTYsMTMuOTY4LDcuODYsMTkuMDRsMTYuMTI0LDE2LjExNmM1LjA2OCw1LjA2OCwxMS44MjQsNy44NiwxOS4wMzIsNy44NnMxMy45NjgtMi43OTIsMTkuMDMyLTcuODZMMzgyLjY3OCwyNjUNCgkJCWM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K) no-repeat;
   float: right;
   margin: 0 -50px 0 0;
@@ -427,15 +652,13 @@ because they content_plus_images class was not a direct offspring!*/
 }
 
 #slide1:checked ~ #controls label:nth-last-child(1),
-#slide2:checked ~ #controls label:nth-last-child(10),
-#slide3:checked ~ #controls label:nth-last-child(9),
-#slide4:checked ~ #controls label:nth-last-child(8),
-#slide5:checked ~ #controls label:nth-last-child(7),
-#slide6:checked ~ #controls label:nth-last-child(6),
-#slide7:checked ~ #controls label:nth-last-child(5),
-#slide8:checked ~ #controls label:nth-last-child(4),
-#slide9:checked ~ #controls label:nth-last-child(3),
-#slide10:checked ~ #controls label:nth-last-child(2){
+#slide2:checked ~ #controls label:nth-last-child(8),
+#slide3:checked ~ #controls label:nth-last-child(7),
+#slide4:checked ~ #controls label:nth-last-child(6),
+#slide5:checked ~ #controls label:nth-last-child(5),
+#slide6:checked ~ #controls label:nth-last-child(4),
+#slide7:checked ~ #controls label:nth-last-child(3),
+#slide8:checked ~ #controls label:nth-last-child(2){
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMg0KCQkJQzM2MS40NzYsMi43OTIsMzU0LjcxMiwwLDM0Ny41MDQsMHMtMTMuOTY0LDIuNzkyLTE5LjAyOCw3Ljg2NEwxMDkuMzI4LDIyNy4wMDhjLTUuMDg0LDUuMDgtNy44NjgsMTEuODY4LTcuODQ4LDE5LjA4NA0KCQkJYy0wLjAyLDcuMjQ4LDIuNzYsMTQuMDI4LDcuODQ4LDE5LjExMmwyMTguOTQ0LDIxOC45MzJjNS4wNjQsNS4wNzIsMTEuODIsNy44NjQsMTkuMDMyLDcuODY0YzcuMjA4LDAsMTMuOTY0LTIuNzkyLDE5LjAzMi03Ljg2NA0KCQkJbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=) no-repeat;
   float: left;
   margin: 0 0 0 -50px;
@@ -445,13 +668,15 @@ because they content_plus_images class was not a direct offspring!*/
   margin: 100px 0 0;
   text-align: center;
 }
+/*THIS CREATES A CIRCLE BULLET FOR EACH SLIDE*/
 #bullets label{
   display: inline-block;
   width: 10px;
   height: 10px;
-  border-radius: 100%;
+  border-radius: 33%;
   background: #a8dadcff;
   margin: 210px 10px 0 10px;
+  transition: background-color 1s, width 1s, transform 1s;
 }
 #slide1:checked ~ #bullets label:nth-child(1),
 #slide2:checked ~ #bullets label:nth-child(2),
@@ -460,45 +685,95 @@ because they content_plus_images class was not a direct offspring!*/
 #slide5:checked ~ #bullets label:nth-child(5),
 #slide6:checked ~ #bullets label:nth-child(6),
 #slide7:checked ~ #bullets label:nth-child(7),
-#slide8:checked ~ #bullets label:nth-child(8),
-#slide9:checked ~ #bullets label:nth-child(9),
-#slide10:checked ~ #bullets label:nth-child(10){
-  background: #e63946ff;
+#slide8:checked ~ #bullets label:nth-child(8){
+  background-color: goldenrod;
+  width: 30px;
+  transform: rotate(270deg);
+  animation-duration: 1s;
 }
-
 
 
 
 /*MEDIA QUERIES*/
-/*min.width means from that measure onwards*/
-@media (max-width:1025px){
-  label.logo{
-    font-size: 30px;
-    padding-left: 20px;
-  }
-  nav ul li a{
-    font-size: 18px;
-  }
+/*DESKTOP COMPUTERS*/
+@media (min-width:991px){
 }
-@media (max-width:577px){
-  nav{
-    height: 60px;
+/*TABLES*/
+@media (min-width:601px) and (max-width:990px) {
+}
+/*MOBILE DEVICES*/
+@media (max-width:600px){
+  /*This allows the content to be hiden if a scroll in the nav bar menu.*/
+    nav{
+      position: fixed;
+    }
+    /*TO INCREASE THE MARGIN OF THE BULLETS*/
+    #bullets{
+      margin: 100px 0 15px;
+    }
+    /*THIS REMOVES ANY MARGINS OUTSIDE THE SLIDER*/
+    #slider{
+      width: 100vw;
+    }
+    #slides{
+      margin-top: -40px;
+      border: 4px solid #1d3557ff;
+      border-radius: 0;
   }
-  label.logo, .checkbtn{
-    font-size: 25px;
-    line-height: 60px;
-  }
-  .checkbtn{
-    display: block;
-  }
-  .test_btn_position{
-    top: 0.8em;
-    left: 4.5em;
-  }
-  .btn_appearance{
-    height: 35px;
-    width: 35px;
-  }
+  /*SLIDES WHOSE OVERFLOW SCROLLS*/
+    #slides .slide_content,
+    #slides .slide_grammar{
+      overflow: scroll;
+      width: 100vw;
+      height: 90vh;
+    }
+    .table, td, th{
+      font-size: .5em;
+    }
+  /*WHEN USING UL THE LISTS ARE NOT DISPLAYED DUE TO THE SETTINGS OF THE NAV BAR.*/
+    ol{
+      padding-left: 10px;
+    }
+  /*REMOVES UNEEDED IMAGES & ELEMENTS*/
+    .polaroid_image, .hidden_text, .slide_image {
+      display: none;
+    }
+  /*RESIZES BACKGROUND IMAGES WHEN DISPLAYING IT ON A SMALL SCREEN*/
+    #conversation_right, #conversation_left, #note_taking_left,#note_taking_right, #presentation_left, #quiz{
+      background-size: 30px;
+    }
+    #note_taking_grammar_left{
+      background-size: 30px;
+      background-position: 5% 3.5%
+    }
+    .header_content>h2{
+      font-size: .8em;
+      line-height: 30px;
+      padding-top: -10px;
+      top: 10px;
+    }
+    #slides .inner{
+      font-size: 1em;
+      height: 100vh
+    }
+    nav{
+        height: 60px;
+      }
+    label.logo, .checkbtn{
+      font-size: 25px;
+      line-height: 60px;
+    }
+    .checkbtn{
+      display: block;
+    }
+    .test_btn_position{
+      top: 0.8em;
+      left: 4.5em;
+    }
+    .btn_appearance{
+      height: 35px;
+      width: 35px;
+    }
   ul{
     position: fixed;
     width: 100%;
@@ -513,7 +788,7 @@ because they content_plus_images class was not a direct offspring!*/
   }
   nav ul li{
     display: block;
-    margin: 80px 0;
+    margin: 50px 0;
     line-height: 30px;
   }
   nav ul li a{
@@ -526,20 +801,26 @@ because they content_plus_images class was not a direct offspring!*/
   #check:checked ~ ul{
     left: 0;
   }
-  .red_fade{
+  .golden_fade{
     display: none;
   }
-  /*Media quuery screensize for SLIDER*/
+  /*Media query screensize for SLIDER*/
   #slide1:checked ~ #controls label:nth-child(2),
   #slide2:checked ~ #controls label:nth-child(3),
   #slide3:checked ~ #controls label:nth-child(4),
   #slide4:checked ~ #controls label:nth-child(5),
-  #slide5:checked ~ #controls label:nth-child(1),
+  #slide5:checked ~ #controls label:nth-child(6),
+  #slide6:checked ~ #controls label:nth-child(7),
+  #slide7:checked ~ #controls label:nth-child(8),
+  #slide8:checked ~ #controls label:nth-child(1),
   #slide1:checked ~ #controls label:nth-last-child(1),
-  #slide2:checked ~ #controls label:nth-last-child(5),
-  #slide3:checked ~ #controls label:nth-last-child(4),
-  #slide4:checked ~ #controls label:nth-last-child(3),
-  #slide5:checked ~ #controls label:nth-last-child(2){
+  #slide2:checked ~ #controls label:nth-last-child(8),
+  #slide3:checked ~ #controls label:nth-last-child(7),
+  #slide4:checked ~ #controls label:nth-last-child(6),
+  #slide5:checked ~ #controls label:nth-last-child(5),
+  #slide6:checked ~ #controls label:nth-last-child(4),
+  #slide7:checked ~ #controls label:nth-last-child(3),
+  #slide8:checked ~ #controls label:nth-last-child(2){
     margin: 0;
   }
   .menu_bar{
