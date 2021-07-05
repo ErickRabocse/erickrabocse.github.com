@@ -1,0 +1,176 @@
+/*
+font-family: 'Inter', sans-serif;
+font-family: 'Lexend Deca', sans-serif;
+*/
+
+body{
+  font-size: 15px;
+}
+.container{
+  height: 100vh;
+  width: 100vw;
+  background-color: hsl(233, 47%, 7%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  width: 1110px;
+  height: 445px;
+  background-color: hsl(244, 38%, 16%);
+  border-radius: 0.5em;
+  display: grid;
+  grid-template-columns: 1fr 539px;
+  grid-template-rows: 1fr;
+}
+.presentation{
+  margin: 75px 120px 40px 80px;
+  display: grid;
+  grid-template: 255px 1fr 1fr / 1fr 1fr 1fr;
+}
+.description{
+  grid-area: 1/1/2/4;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5em;
+  color: hsla(0, 0%, 100%, 0.6);
+}
+.image{
+  height: 100%;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  background-image: url("./images/image-header-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: hsl(277, 64%, 61%);
+  background-blend-mode: multiply;
+}
+header, .numbers{
+  font-family: 'Inter', sans-serif;
+  line-height: 1.3em;
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+}
+header{
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+.numbers{
+  font-size: 20px;
+}
+.benefits{
+  font-family: 'Lexend Deca', sans-serif;
+  color: hsla(0, 0%, 100%, 0.6);
+}
+.accent{
+  color: hsl(277, 64%, 61%);
+}
+/*if I wanted the img as the bg with separate effects-->
+.image::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./images/image-header-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+*/
+@media (max-width:549px){
+  .container{
+    height: 900px;
+  }
+  .card{
+    width: 80%;
+    height: 730px;;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 230px 1fr;
+    text-align: center;
+  }
+  .presentation{
+    grid-area:2/1;
+    height: 260px;
+    width: 80%;
+    margin: 30px auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px repeat(6,1fr);
+  }
+  .image{
+    grid-area:1/1;
+    border-top-left-radius: 0.5em;
+    border-bottom-right-radius: 0;
+    background-size: cover;
+  }
+  .description, .benefits{
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  header{
+    font-size: 25px;
+  }
+  .numbers{
+    position: relative;
+    bottom: 7px;
+  }
+  .gap{
+    margin-top: 50px;
+  }
+  .n1{
+    grid-area: 3/1;
+  }
+  .b1{
+    grid-area: 4/1;
+  }
+  .n2{
+    grid-area: 5/1;
+  }
+  .b2{
+    grid-area: 6/1;
+  }
+  .n3{
+    grid-area: 7/1;
+  }
+  .b3{
+    grid-area: 8/1;
+  }
+}
+@media (min-width:550px) and (max-width:624px){
+  .container{
+    height: 900px;
+  }
+  .card{
+    width: 90%;
+    height: 800px;;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 340px 1fr;
+  }
+  .presentation{
+    grid-area:2/1;
+    height: 350px;
+    width: 80%;
+    margin: auto;
+  }
+  .image{
+    grid-area:1/1;
+    border-top-left-radius: 0.5em;
+    border-bottom-right-radius: 0;
+    background-size: cover;
+  }
+  .numbers{
+    margin-top: 20px;
+  }
+}
+@media (min-width:625px) and (max-width:1065px){
+  .card{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 500px 1fr;
+  }
+  .image{
+    background-size: cover;
+  }
+  .presentation{
+    margin: 40px 80px 40px 80px;
+    grid-template: 285px 1fr 1fr / 1fr 1fr 1fr;
+  }
+}
