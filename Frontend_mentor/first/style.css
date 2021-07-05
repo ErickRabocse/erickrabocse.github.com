@@ -139,16 +139,17 @@ header{
   }
   .card{
     width: 90%;
-    height: 800px;;
+    height: 700px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 340px 1fr;
+    grid-template-rows: 300px 1fr;
   }
   .presentation{
     grid-area:2/1;
-    height: 350px;
+    height: 200px;
     width: 80%;
     margin: auto;
+    margin-top: 30px;
   }
   .image{
     grid-area:1/1;
