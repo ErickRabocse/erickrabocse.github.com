@@ -11,13 +11,13 @@ body{
   background-color: hsl(0, 0%, 95%);
   display: flex;
   justify-content: center;
-  align-items: center;
 }
-.wrapper{
+.main{
   height: 500px;
   width: 915px;
   display: grid;
   grid-template-columns: repeat(3,1fr);
+  margin-top: 160px;
 }
 .card{
   align-items: center;
@@ -78,7 +78,31 @@ button:hover{
 .text_orange{
   color: hsl(31, 77%, 52%);
 }
-header{
+.info{
   position: relative;
   top: -40px;
+}
+
+@media screen and (max-width: 400px) {
+  .window{
+    height: 100%;
+  }
+  .main{
+    height: 1500px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,1fr);
+    margin: 100px auto;
+  }
+  .left{
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom-left-radius: 0;
+  }
+  .right{
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border-top-right-radius: 0;
+  }
 }
