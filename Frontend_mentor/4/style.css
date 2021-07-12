@@ -1,0 +1,179 @@
+:root{
+    --bg: hsl(0, 0%, 100%);
+    --reviewBox_quotes_reviewerName: hsl(300, 24%, 96%);
+    --description: hsl(303, 10%, 53%);
+    --revieweRole: hsl(333, 80%, 67%);
+    --card_ratings_title: hsl(300, 43%, 22%);
+}
+*, *::before, *::after{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Spartan', sans-serif;
+    font-size: 15px;
+    background-color: var(hsl(0, 0%, 100%));
+}
+
+.main{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.main::before{
+    content: "";
+    position: absolute;
+    background-image: url("./images/bg-pattern-top-desktop.svg");
+    background-size: 520px;
+    background-repeat: no-repeat;
+    inset: 0;    
+}
+.main::after{
+    content: "";
+    position: absolute;
+    background-image: url("./images/bg-pattern-bottom-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: 1400px;
+    inset: 0;
+    margin-top: -50px;
+    margin-left: 250px;
+}
+.container{
+    position: absolute;
+    display: grid;
+    height: 570px;
+    width: 1110px;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(6,1fr);
+}
+.description{
+    grid-area: 1/1/4/4;
+    padding-right: 100px;
+}
+
+
+
+.ratings_grid_area_1{
+    grid-area: 1/4/2/7;
+}
+.ratings_grid_area_2{
+    grid-area: 2/4/3/7;
+}
+.ratings_grid_area_3{
+    grid-area: 3/4/4/7;
+}
+.ratings_container{
+    height: 55px;
+    width: 445px;
+    border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    background-color: var(--reviewBox_quotes_reviewerName);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--card_ratings_title);
+    z-index: 1;
+}
+.rating_position_1{
+    position: relative;
+    left: 0;
+    bottom: -24px;
+}
+.rating_position_2{
+    position: relative;
+    left: 50px;
+    top: 4px;
+}
+.rating_position_3{
+    position: relative;
+    left: 100px;
+    top: -15px;
+}
+
+
+
+.reviews{
+    display: flex;
+    justify-content: center;
+}
+.review_1{
+    grid-area: 4/1/7/3;
+}
+.review_2{
+    grid-area: 4/3/7/5;
+}
+.review_3{
+    grid-area: 4/5/7/7;
+}
+.card{
+    height: 220px;
+    width: 330px;
+    margin: 10px;
+    border-radius: 0.5em;
+    padding: 30px;
+    background-color: var(--card_ratings_title);
+}
+.card_2{
+    position: relative;
+    top: 20px;
+}
+.card_3{
+    position: relative;
+    top: 40px;
+}
+
+
+
+.credits{
+    position: absolute;
+    width: 500px;
+    top: 700px;
+}
+h1{
+    font-size: 40px;
+    color: var(--card_ratings_title);
+    padding-right: 120px;
+    line-height: 44px;
+}
+.bio h2, .bio p{
+    font-size: 15px;
+    margin: 10px 0;
+    line-height: 10px;
+}
+.bio h2, q{
+    color: var(--reviewBox_quotes_reviewerName);
+}
+.bio p{
+    color: var(--revieweRole);
+    font-weight: 400;
+}
+.description p{
+    color: var(--description);
+    font-size: 15px;
+    line-height: 25px;
+    margin-top: 15px;
+}
+.image{
+    float: left;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-top: -7px;
+}
+.quote{
+    margin-top: 30px;
+    font-size: 12px;
+    line-height: 20px;
+}
+.stars{
+    word-spacing: 5px;
+    margin: 0 30px;
+
+}
